@@ -7,7 +7,7 @@ public class Question6 {
          System.out.println("enter a exersice");
          String exersice= scanner.nextLine();
          if (isCorrectCh(exersice)==false || isCorrectOrder(exersice)==false) {
-            while ((isCorrectCh(exersice) == false || isCorrectOrder(exersice) == false) || checkBrackets(exersice)==false) {
+            while ((isCorrectCh(exersice) == false || isCorrectOrder(exersice) == false)) {
            System.out.println("enter correct exersice");
           exersice = scanner.nextLine();
         }
@@ -57,6 +57,7 @@ public class Question6 {
                 }
             }
             index++;
+            if (st.charAt(index)==40)
             if (checkBrackets(st) == false) {
                 result = false;
             }
@@ -71,6 +72,7 @@ public class Question6 {
         while (st.charAt(index) != 40 && st.length() > index) {
             index++;
             indexCh1 = index;
+
 
         }
         index = 0;

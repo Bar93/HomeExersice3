@@ -32,7 +32,7 @@ public class Question9 {
         }
         public static String getGussFromUser (){ //מקבל ניחוש מהיוזר ובודק תקינות
             Scanner scanner = new Scanner(System.in);
-            System.out.println("enter a guss");
+            System.out.println("Enter a guss");
             String guss = scanner.nextLine();
             boolean checkGuss =true;
             for (int i = 0; i < guss.length(); i++) {
@@ -50,7 +50,7 @@ public class Question9 {
                         checkGuss = true;
                     }
                 }
-                    System.out.println("enter a guss with four numbers between 1-6");
+                    System.out.println("Enter a guss with four numbers between 1-6");
                     guss = scanner.nextLine();
                 }
                  return guss;
@@ -67,7 +67,7 @@ public class Question9 {
                     numGuss = scanner.nextInt();
                     if (numGuss < 1 || numGuss > 4) {
                         while ((numGuss < 1 || numGuss > 4)) {
-                            System.out.println("enter a correct option between 1-4");
+                            System.out.println("Enter a correct option between 1-4");
                             numGuss = scanner.nextInt();
                         }
                     }
@@ -107,43 +107,42 @@ public class Question9 {
                     index1++;
                     index2=0;
                 }
-                System.out.println("you have " +countHalfHit + "half hit");
-                System.out.println("you have " +countFullHit + "full hit");
+                System.out.println("you have " +countHalfHit + " half hit");
+                System.out.println("you have " +countFullHit + " full hit");
                 return countFullHit;
                 }
 
-                public static void play (){ //פונקציה שמנהלת את המשחק ובודקת האם יש ניצחון או לא
-                String code = getRndCode();
-                int userChoice= getDifficultFromUser() ;
-                int numOfGuss = numOfGuss(userChoice);
-                int countGuss = 0;
-                String guss = getGussFromUser();
-                int countFullHit;
-                while (numOfGuss >1){
-                    countFullHit = checkGuss(code,guss);
-                    countGuss++;
-                    if (countFullHit <4)
-                    {
-                        if (userChoice!=4) {
-                            System.out.println("try again, you use " +countGuss+" guss from " + numOfGuss+ " of your guss" );
-                            guss = getGussFromUser();
+                public static void play () { //פונקציה שמנהלת את המשחק ובודקת האם יש ניצחון או לא
+                    String code = getRndCode();
+                    int userChoice = getDifficultFromUser();
+                    int numOfGuss = numOfGuss(userChoice);
+                    int countGuss = 0;
+                    String guss = getGussFromUser();
+                    int countFullHit;
+                    while (numOfGuss > 1) {
+                        countFullHit = checkGuss(code, guss);
+                        countGuss++;
+                        if (countFullHit < 4) {
+                            if (userChoice != 4) {
+                                System.out.println("Try again, you use " + countGuss + " guss from " + numOfGuss + " of your guss");
+                                guss = getGussFromUser();
+                            } else {
+                                guss = getGussFromUser();
+                            }
                         }
-                        else {
-                            guss = getGussFromUser();
+                        if (countFullHit == 4) {
+                            System.out.println("Congratulations you win with " + countGuss + " guess");
+                            break;
+                        }
+                        if (checkDupleNum(guss) == false) {
+                            numOfGuss = numOfGuss - 2;
+                        } else {
+                            numOfGuss--;
                         }
                     }
-                    if (countFullHit ==4){
-                        System.out.println("Congratulations you win with " + countGuss +" guess");
-                        break;
-                    }
-                    if (checkDupleNum(guss)==false){
-                        numOfGuss = numOfGuss-2;
-                    }
-                    else {
-                        numOfGuss--;
-                    }
-                    }
-                    System.out.println("nice try");
+
+                        System.out.println("Nice try");
+
                 }
 
             public static boolean checkDupleNum (String guss) // פונקציה שבודקת האם בניחוש של המשתמש יש בחירה כפולה
