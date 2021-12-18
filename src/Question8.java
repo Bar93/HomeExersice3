@@ -3,18 +3,18 @@ import java.util.Scanner;
 public class Question8 {
 
     public static void main(String[] args) {
-        System.out.println("the most popular sub string is  " + getMostPopular());
+        System.out.println("The most popular sub string is  " + getMostPopular());
     }
 
     public static String[] getArrayOfStrings() { //מחזיר מערך של מחרוזות
         Scanner scanner = new Scanner(System.in);
         int counter = 0, index1 = 0, index2 = 0;
         String word, sentence = "";
-        System.out.println("enter a string");
+        System.out.println("Enter a string");
         word = scanner.nextLine();
         sentence = sentence + word + "*";
         while (word.length() > 4) {
-            System.out.println("enter a string");
+            System.out.println("Enter a string");
             counter++;
             word = scanner.nextLine();
             sentence = sentence + word + "*";
