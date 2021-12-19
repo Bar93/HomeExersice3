@@ -175,7 +175,7 @@ public class Question6 {
         index1 = 0;
         int[] arrWithoutPow = new int[arrWithoutBrackets.length];
         index2 = 0;
-        while (index1 < arrWithoutBrackets.length && arrWithoutBrackets[index1] != 0) {
+        while (index1 < arrWithoutBrackets.length) {
             if (arrWithoutBrackets[index1] == 94) {
                 sigh = arrWithoutBrackets[index1];
                 pow = pow(arrWithoutBrackets[index1-1], arrWithoutBrackets[index1+1]);
@@ -193,7 +193,7 @@ public class Question6 {
         index1 = 0;
         int[] arrWithoutDup = new int[arrWithoutPow.length];
         index2 = 0;
-        while (index1 < arrWithoutPow.length  && arrWithoutPow[index1] != 0) {
+        while (index1 < arrWithoutPow.length) {
             if (arrWithoutPow[index1] == 42 || arrWithoutPow[index1] == 47) {
                 sigh = arrWithoutPow[index1];
                 dup = duplicateDivision(arrWithoutPow[index1-1], arrWithoutPow[index1+1], arrWithoutPow[index1]);
@@ -211,7 +211,7 @@ public class Question6 {
         index1 = 0;
         int[] arrWithoutPlus = new int[arrWithoutDup.length];
         index2 = 0;
-        while (index1 < arrWithoutDup.length && arrWithoutDup[index1] != 0) {
+        while (index1 < arrWithoutDup.length) {
             if (arrWithoutDup[index1] == 43 || arrWithoutDup[index1] == 45) {
                 sigh = arrWithoutPow[index1];
                 plus = sum(arrWithoutDup[index1-1], arrWithoutDup[index1 +1], arrWithoutDup[index1]);
